@@ -1,0 +1,16 @@
+// Return  all prime nos between 1 to 100
+
+function isPrime(num) {
+    for ( var i = 2; i < num; i++ ) {
+        if ( num % i === 0 ) {
+            return false;
+        }
+    }
+    return true;
+}
+const result = [];
+for (var counter = 2; counter <= 100; counter++) {
+    if(isPrime(counter)) result.push(counter)
+}
+    
+console.log(result)
