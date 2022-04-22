@@ -16,5 +16,7 @@ function waitForInput(ip) {
 }
 
 
-const debouncedFn = debouncedPrint(() => waitForInput('Received Input from user'), 5000)
-debouncedFn();
+// const debouncedFn = debouncedPrint(() => waitForInput('Received Input from user'), 2000)
+const debouncedFn = debouncedPrint(waitForInput, 2000)
+
+debouncedFn('Input received in cb function , add');
