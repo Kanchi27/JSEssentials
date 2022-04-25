@@ -61,8 +61,6 @@ const array = [
 ]
 
 // Output:
-// res [ 'value1', 'value2' ]
-// res [ 'values', 'value1', 'value2' ]
 // [
 //   'item',   'values', 'value1',
 //   'value2', 1,        2,
