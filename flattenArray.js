@@ -22,3 +22,79 @@ const customFlatten = (array) => {
 }
 
 console.log('using custom method', customFlatten(arr))
+
+
+
+const array = [
+  'item',
+  {
+    "somekey" : "values",
+    "obj" : {
+      'prop1' : 'value1',
+      'prop2' : 'value2'
+    }
+  },
+    [1, 2, 3, 4],
+    undefined,
+    null,
+    ["a","b","c"],
+    [["p"],["q"],["r"]]
+]
+
+
+// Flatten an array of different data types
+// Input:
+const array = [
+  'item',
+  {
+    "somekey" : "values",
+    "obj" : {
+      'prop1' : 'value1',
+      'prop2' : 'value2'
+    }
+  },
+    [1, 2, 3, 4],
+    undefined,
+    null,
+    ["a","b","c"],
+    [["p"],["q"],["r"]]
+]
+
+// Output:
+// res [ 'value1', 'value2' ]
+// res [ 'values', 'value1', 'value2' ]
+// [
+//   'item',   'values', 'value1',
+//   'value2', 1,        2,
+//   3,        4,        undefined,
+//   null,     'a',      'b',
+//   'c',      'p',      'q',
+//   'r'
+// ]
+
+function flattenObj(obj){
+  const res = [];
+  Object.keys(obj).forEach(key => {
+    if(typeof obj[key]==='string'){
+      res.push(obj[key])
+    }else{
+      res.push(...flattenObj(obj[key]))
+    }
+  })
+  return res;
+}
+
+function flattenArray(arr){
+  const result = [];
+  for(let a of arr){
+    if(a && a.constructor === Object){
+     result.push(...flattenObj(a))
+    }else if(Array.isArray(a)){
+      result.push(...flattenArray(a))
+    }else{
+      result.push(a)
+    }
+  }
+  return result;
+}
+console.log(flattenArray(array))
