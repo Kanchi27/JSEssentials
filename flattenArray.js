@@ -25,23 +25,6 @@ console.log('using custom method', customFlatten(arr))
 
 
 
-const array = [
-  'item',
-  {
-    "somekey" : "values",
-    "obj" : {
-      'prop1' : 'value1',
-      'prop2' : 'value2'
-    }
-  },
-    [1, 2, 3, 4],
-    undefined,
-    null,
-    ["a","b","c"],
-    [["p"],["q"],["r"]]
-]
-
-
 // Flatten an array of different data types
 // Input:
 const array = [
