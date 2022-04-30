@@ -1,6 +1,18 @@
 let arr = [
     [1, 2],
     [3, 4],
+    [5, 6, 9],
+    [10, 11, 12],
+]
+const flatArr = arr.reduce((accum, curr)=>{
+return accum.concat(curr)
+})
+console.log(flatArr)        // [1, 2,  3,  4,  5, 6, 9, 10, 11, 12]
+
+
+let arr = [
+    [1, 2],
+    [3, 4],
     [5, 6, [7, ['a', 'b', 'c'], 8], 9],
     [10, 11, 12],
 ]
