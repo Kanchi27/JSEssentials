@@ -22,7 +22,8 @@ for (let i = 0; i < 3; i++) {
 }
 
 
-// solve with closures
+// solve with closures:
+// Closure is when a function is able to remember and access its lexical scope even when that function is executing outside its lexical scope.
 for (var i = 0; i < 3; i++) {
     function inner(x) {
         setTimeout(() => {
