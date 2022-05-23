@@ -7,6 +7,13 @@ for (var i = 0; i < 3; i++) {
 
 
 
+
+// solved with var, using third param of setTimeout
+for (var i = 0; i <= 3; i++) {
+  // We can use 3rd parameter of setTimeout to pass the value of iteration which creates a new scope each time loop iterates
+  setTimeout(console.log, (i) * 3000, i);
+}
+
 // solve with let
 for (let i = 0; i < 3; i++) {
     setTimeout(() => {
