@@ -7,11 +7,11 @@
 
 
 
-// new Promise((resolve, reject) => {
-//   console.log('Hi one')
-// })
+new Promise((resolve, reject) => {
+  console.log('Hi one')
+})
 
-// console.log('Hi two')
+console.log('Hi two')
 
 
 // --OP: -Hi one---Hi two-------------------------------
@@ -24,17 +24,17 @@
 
 
 
-// new Promise((resolve, reject) => {
-//   console.log('Hi one')
-// })
+new Promise((resolve, reject) => {
+  console.log('Hi one')
+})
 
-// the code below is a part of Browser API's and get's sent to the callback queue when ready and executed on the call stack whenever it's empty
+the code below is a part of Browser API's and get's sent to the callback queue when ready and executed on the call stack whenever it's empty
 
-// setTimeout(() => {
-//   console.log('Inside timeout')
-// }, 0)
+setTimeout(() => {
+  console.log('Inside timeout')
+}, 0)
 
-// console.log('Hi two')
+console.log('Hi two')
 
 
 
@@ -46,8 +46,6 @@
 // -------------------------------------
 
 
-
-/*
 let data = new Promise((resolve, reject) => {
   console.log('Hi one') // synchronous code, not a part of microtask
   resolve('Promise resolved data') //  looks for the promise handler and tries to run it therefore sends it to the microtask queue (there isn't any at this point)
@@ -65,7 +63,7 @@ data.then((res) => {
   console.log(res)
 })
 
-*/
+
 // ---OP----Hi one-----Hi two----Promise resolved data-----Inside timeout-----
 
 
@@ -75,7 +73,6 @@ data.then((res) => {
 
 
 
-/*
 let data = new Promise((resolve, reject) => {
     console.log('Hi one') // synchronous code execution
   
@@ -94,7 +91,7 @@ data.then((res) => {
 
 
 console.log('Hi two')
-*/
+
 
 // ---OP----Hi one-----Hi two----Timeout-----Hello-----
 
