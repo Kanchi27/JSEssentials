@@ -20,3 +20,24 @@ function throttle(func,limit){
     }
   }
 }
+
+
+
+//  Simple throttlelet timer;
+ const throttle = (cb, delay) => {
+    // add your debounce logic here
+    
+    let timer;
+    let lastRan;
+    return function(...args){
+      if (timer) return;
+      if(!lastRan){
+        cb(...args);
+        lastRan = true;
+        return;
+      }
+      timer = setTimeout(() => {
+        cb(...args);
+        timer = null;
+      },delay)
+    }
