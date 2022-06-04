@@ -22,3 +22,9 @@ const composePolyfill = (...fns) => {
 const evaluate = composePolyfill(addFive, subtractTwo, multiplyFour);
 console.log(evaluate(5))
 
+
+// Pipe plyfill
+pipe = (...fns) => x => fns.reduce((v, f) => f(v), x)
+
+// Compose Polyfill
+compose = (...fns) => x => fns.reduceRight((v, f) => f(v), x);
