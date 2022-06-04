@@ -5,7 +5,7 @@ function sum(a) {
     }
 }
 
-const sum1 = (a) => (b) => b ? sum(a + b) : a
+const sum = (a) => (b) => b ? sum(a + b) : a
 
 console.log(sum(2)(3)(4)(5)(6)());
 
