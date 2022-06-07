@@ -22,6 +22,23 @@ function throttle(func,limit){
 }
 
 
+//  Simple throttle timer 1;
+ const throttle = (cb, delay) => {
+    let lastRanFlag = true;
+    return function(){
+      let context = this;
+      let args = arguments;
+      if(lastRanFlag){
+        cb.apply(this,args);
+        lastRanFlag = false;
+          setTimeout(() => {
+          lastRanFlag = true
+      },delay)
+      }  
+    }
+ }
+ 
+ 
 
 //  Simple throttlelet timer;
  const throttle = (cb, delay) => {
