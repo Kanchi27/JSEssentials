@@ -23,8 +23,8 @@ const evaluate = composePolyfill(addFive, subtractTwo, multiplyFour);
 console.log(evaluate(5))
 
 
-// Pipe plyfill
+// Pipe polyfill -- goes from left to right in sequence of functions listed (0 to n-1)
 pipe = (...fns) => x => fns.reduce((v, f) => f(v), x)
 
-// Compose Polyfill
+// Compose Polyfill --  goes from right to left in sequence of functions listed (n-1 to 0)
 compose = (...fns) => x => fns.reduceRight((v, f) => f(v), x);
