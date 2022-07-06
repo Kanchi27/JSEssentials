@@ -43,11 +43,19 @@ const debouncedPrint = (cb, d) => {
         if (timer) clearTimeout(timer);
         // whenever user types , reinitiate the timer
         // when user stops typing, prev timers will be cancelled, current timer will complete and cb will be executed
-        timer = setTimeout(() => {
-            cb(...args);
-        }, d)
+        timer = setTimeout(() =>  cb(...args), d)
     }
 }
+
+const debouncedPrint = (cb, delay) => {
+  let timer;
+  return function() {
+    const context = this;
+    const args = arguments;
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(() => cb.apply(context, args), delay);
+  };
+};
 
 function waitForInput(ip) {
     console.log(ip)
