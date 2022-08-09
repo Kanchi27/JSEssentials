@@ -35,3 +35,11 @@ Promise.allSettled([showLogAfterDelay('Output after 2 seconds', 2000), Promise.r
 customPromiseAllSettled([showLogAfterDelay('Output after 2 seconds', 2000), Promise.resolve('Resolve me'), Promise.reject('Reject me')])
     .then((val) => console.log('in customPromiseAllSettle resolve', val))
     .catch((val) => console.log('in customPromiseAllSettle reject', val));
+
+
+// Output :
+// in resolve [
+//   { status: 'fulfilled', value: 'Resolve me' },
+//   { status: 'rejected', value: 'Reject me' },
+//   { status: 'fulfilled', value: 'Output after 2 seconds' }
+// ]
