@@ -4,8 +4,7 @@ for (var i = 0; i < 3; i++) {
         console.log(i);
     }, 3000 * i)
 }
-
-
+// Wrong impl : Prints 3,3,3 in intervals of 1s
 
 
 // solved with var, using third param of setTimeout
