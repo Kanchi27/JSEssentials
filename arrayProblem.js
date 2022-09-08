@@ -14,7 +14,7 @@ arr.push(2); // [ <2 empty items>, 2 ]
 arr.push(0);  // [ <2 empty items>, 2, 0 ]
 console.log(arr)
 for(const num in arr){
-  console.log('num',num) // 0,1,2,3 
-  foo(num);             // undefined, undefined, 2, 0
-  foo(arr[num]);
+  console.log('num',num) 
+  foo(num);             // 0,1,2,3 
+  foo(arr[num]);    // undefined, undefined, 2, 0
 }
