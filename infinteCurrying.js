@@ -20,7 +20,7 @@ function sum(...a){ // when you write a rest operator : a becomes an array , so 
     if(!b.length)  {
       return a.reduce((acc,curr) => acc+curr)
     }
-    else return sum(...a,...b)  // 1,2,3 // 1,2,3,4
+    else return sum(...a,...b)  //again we spread here : so array becomes:comma separated args=> 1,2,3 // 1,2,3,4
   }
 }
 
