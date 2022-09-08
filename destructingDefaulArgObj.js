@@ -2,5 +2,6 @@ function setCookie(name, value, {domain = "osod.com"} = {}, secure='false',path=
     console.log(secure, domain, path)
   }
   
-setCookie('type','js');  // should output false osod.com path
-setCookie('type','js',{domain:'google.com'})  // should output false google.com path
+const obj = {domain:'google.com'}
+setCookie('type','js');  // should output =>    false osod.com   path
+setCookie('type','js',obj)  // should output => false google.com path
