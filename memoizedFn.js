@@ -1,6 +1,5 @@
-const memoize = (fn) => {
+const memoize = (fn,context) => {
   let cache = {}
-  let context = this
   return (...args) => {
     const key = JSON.stringify(args) // (rest param) args is an array, as passed argument is 1,2,3 : memoizedAdd(1,2,3)
     if(key in cache){
@@ -8,6 +7,7 @@ const memoize = (fn) => {
     }else{
       console.log('computing result')
       cache[key] = fn.apply(context,args)
+//       OR , fn.call(context || this, ...args)
     }
     return cache[key]
   }
